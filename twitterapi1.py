@@ -5,16 +5,16 @@ Here I am fetching all tweets by @MumbaiPolice on lockdown
 
 
 
-#access token = "350086556-OHeT0fMKHeVSknIyMZNpXlDEFQGLj149YiaziaJt"
-#access token secret = "FjDcwDsfV7I4iYvhnG8ozgi7VHDM8vcXsovYJprRchjeW"
+#access token = "Jt350086556-OHeT0fMKHeVSknIyMZNpXlDEFQGLj149Yiazia"
+#access token secret = "eWFjDcwDsfV7I4iYvhnG8ozgi7VHDM8vcXsovYJprRchj"
 
 import os
 from requests_oauthlib import OAuth1Session
 import json
 
 
-consumer_key = 'RnbvXa91OYTikJFDPokYJgn73'  
-consumer_secret = '1MnK4bcN8aExdXHwX1uSmG45tNUQaaJLrVmjSMq26q2crF5nkH' 
+consumer_key = '73RnbvXa91OYTikJFDPokYJgn'  
+consumer_secret = 'kH1MnK4bcN8aExdXHwX1uSmG45tNUQaaJLrVmjSMq26q2crF5n' 
 
 
 # Get request token
