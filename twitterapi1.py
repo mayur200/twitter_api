@@ -1,8 +1,12 @@
 '''
 Using Twitter API, fetch all tweets posted by a particular Twitter handle
 Here I am fetching all tweets by @MumbaiPolice on lockdown
-'''
 
+helped API DOC
+
+https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
+https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators
+'''
 
 
 #access token = "Jt350086556-OHeT0fMKHeVSknIyMZNpXlDEFQGLj149Yiazia"
@@ -13,7 +17,7 @@ from requests_oauthlib import OAuth1Session
 import json
 
 
-consumer_key = '73RnbvXa91OYTikJFDPokYJgn'  
+consumer_key = '73RnbvXa91OYTikJFDPokYJgn'
 consumer_secret = 'kH1MnK4bcN8aExdXHwX1uSmG45tNUQaaJLrVmjSMq26q2crF5n' 
 
 

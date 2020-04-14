@@ -1,6 +1,10 @@
 '''
 Using Twitter API, fetch all tweets based on a search keyword
 Here I am getting all tweets related to Shree Ram
+
+Helped API Doc:
+https://developer.twitter.com/en/docs/labs/tweets-and-users/quick-start/get-tweets
+https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
 '''
 
 
