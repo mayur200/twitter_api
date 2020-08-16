@@ -1,18 +1,7 @@
-'''
-Using Twitter API, fetch all tweets posted by a particular Twitter handle
-Here I am fetching all tweets by @MumbaiPolice on lockdown
-
-helped API DOC
-
-https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
-https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators
-'''
+'''Using Twitter API, fetch all tweets posted by a particular Twitter handle and generate a list
+ of most commonly used words used by that handle.'''
 
 
-#access token = "Jt350086556-OHeT0fMKHeVSknIyMZNpXlDEFQGLj149Yiazia"
-#access token secret = "eWFjDcwDsfV7I4iYvhnG8ozgi7VHDM8vcXsovYJprRchj"
-
-import os
 from requests_oauthlib import OAuth1Session
 import json
 
@@ -51,7 +40,7 @@ oauth_tokens = oauth.fetch_access_token(access_token_url)
 access_token = oauth_tokens['oauth_token']
 access_token_secret = oauth_tokens['oauth_token_secret']
 
-params = {"screen_name": "MumbaiPolice", 'count':'200'}
+params = {"screen_name": "CERN", 'count':'200'}
 
 
 # Make the request
@@ -68,8 +57,31 @@ print("Response status: %s" % response.status_code)
 # print("Body: %s" % response.text)
 
 j_response = json.loads(response.text)
-# print("response>>>>>>>",j_response,)
+print("response>>>>>>>",j_response,)
+one_twit = ''
 for text in j_response:
     ans = text.get('text')
-    print(ans)
+    one_twit = one_twit+ans
 
+most = one_twit.split()
+
+
+def to_upper_case(s):
+    return str(s).lower()
+
+
+map_iterator = list(map(to_upper_case, most))
+
+uniq = {}
+for word in map_iterator:
+    if word not in uniq:
+        n = 0
+        for each in map_iterator:
+            if word == each:
+                n = n + 1
+        uniq[word] = n
+twitter_handler=params.get('screen_name')
+print("MOSTLY COMMONLY USED WORDS BY @"+twitter_handler+" is",uniq)
+
+Keymax = max(uniq, key=uniq.get)
+print("The most used words is >>>>>>>>",Keymax)
